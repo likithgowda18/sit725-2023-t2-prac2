@@ -23,6 +23,20 @@ app.get('/addTwoNumbers',(req,res)=>{
     });
 });
 
+app.get('/multiplyTwoNumbers', (req, res) => {
+    let statusCode = 200;
+    let successMessage = 'successful';
+    let number1 = parseInt(req.query.number1); // 25
+    let number2 = parseInt(req.query.number2); // 4
+    let result = number1 * number2;
+
+    res.json({
+        message: successMessage,
+        code: statusCode,
+        data: result
+    });
+});
+
 app.listen(port, () => {
     console.log('server started');
 });
